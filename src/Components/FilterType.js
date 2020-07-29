@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import {Col} from 'reactstrap';
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem} from 'reactstrap';
 import ContextFilter from "../Context/ContextFilter"
+import BorrarFiltros from "./BorrarFiltros"
 
 function FilterType(){
 
@@ -32,7 +33,8 @@ function FilterType(){
                     <DropdownItem onClick={()=>filterType("Casa")}>Casa</DropdownItem>
                 </DropdownMenu>
             </Dropdown> 
-                <p type="button" className="btn btn-primary mt-2 p-2">Filtro: <span className="badge badge-light p-2">{filters.type}</span></p>
+                <p type="button" className="btn btn-primary mt-2 p-2">Filtro:    <span className="badge badge-light p-2">{filters.type}</span></p>
+                <BorrarFiltros value="type"/>
         </Col>
     </>)    
 }

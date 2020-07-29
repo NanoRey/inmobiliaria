@@ -8,6 +8,9 @@ import ContextFilter from "./Context/ContextFilter"
 import FilterRoom from './Components/FilterRoom';
 import FilterParking from './Components/FilterParking';
 import Results from "./Components/Results"
+import { BrowserRouter as Router } from 'react-router-dom';
+import { Switch, Route } from "react-router-dom";
+import ErrorWeb from "./Components/ErrorWeb"
 
 function App() {
   
@@ -68,30 +71,39 @@ function App() {
 
   //const[arrayFiltered,setArrayFiltered]=useState([])
 
-  return (
-    <ContextFilter.Provider value={{totalState,setTotalState,filterFunctions}}>
+  return (<>
+    <Router>
+      <Switch >
+          
+          <Route exact path ="/">
+            <ContextFilter.Provider value={{totalState,setTotalState,filterFunctions}}>
+              <Container>
+                  <Row className="mt-5 mb-5 justify-content-between">
+                    <Col>
+                      <Row>
+                        <FilterType/>
+                        <FilterBathroom/>
+                        <FilterRoom/>
+                        <FilterParking/>
+                        <Results/>
+                      </Row>
+                    </Col>
+                  </Row>
+                  <Row>
+                      <InmueblesGrid/>
+                  </Row>
+              </Container>
+            </ContextFilter.Provider>
+          </Route>
 
-      <Container>
+          <Route path ="*">
+            <ErrorWeb />
+          </Route>
+      </Switch>
+
         
-          <Row className="mt-5 mb-5">
-            <Col>
-              <Row>
-                <FilterType/>
-                <FilterBathroom/>
-                <FilterRoom/>
-                <FilterParking/>
-                <Results/>
-              </Row>
-            </Col>
-          </Row>
-          <Row>
-              <InmueblesGrid/>
-          </Row>
-
-      </Container>
-
-    </ContextFilter.Provider>
-  );
+    </Router>
+  </>);
 }
 
 export default App;

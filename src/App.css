@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: aqua;
 }
 
 .App-logo {
@@ -22,6 +23,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  background-color: aqua;
 }
 
 .App-link {
@@ -36,5 +38,22 @@
     transform: rotate(360deg);
   }
 }
+header{
+  background-color: #45B39D ;
+}
+html {
+  background-color: #45B39D ;
+}
 
+head {
+  background-color: #45B39D  ;
+}
 
+body {
+  background-color: #45B39D  ;
+ 
+}
+.card {
+  background-color: #F9E79F;
+ 
+}

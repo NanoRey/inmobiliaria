@@ -72,7 +72,19 @@ function App() {
   //const[arrayFiltered,setArrayFiltered]=useState([])
 
   return (<>
-    <Router>
+
+  <header>
+  <Col xs="12">
+        <div class="card bg-dark text-white">
+            <img src="https://lh3.googleusercontent.com/proxy/iyLE4PL6KSrNx3W0xgwtyTpJLKWZNydNOLIB_tFLOhw3bziEAl8xhy8QwHEbEiq970L5SbtqHMxBeknJw4AeUiJ-RFhOM-U5Pn6DwGL9wg6eTdZsi74qQLDlYkcB" height="500" width="500" class="card-img" alt="marvel logo"/>
+            <div class="card-img-overlay">
+                <h5 className="card-title text-warning">Bienvenido a esta Maravilla de web que me he marcado</h5>
+            </div>
+            
+        </div>
+        
+    </Col>
+  <Router>
       <Switch >
           
           <Route exact path ="/">
@@ -103,6 +115,8 @@ function App() {
 
         
     </Router>
+  </header>
+    
   </>);
 }
 
